@@ -38,3 +38,10 @@ class LoginLocators:
     #Локаторы для входа через форму восстановления пароля
     RECOVER_PASSWORD_LINK = (By.XPATH, "//a[text()='Восстановить пароль']")  # ссылка восстановить пароль
     LOGIN_LINK_RECOVER = (By.XPATH, "//a[text()='Войти']")            # кнопка войти на форме восстановления
+
+class ConstructorLocators:
+    #Локаторы для перехода в конструктор
+    PERSONAL_ACCOUNT_LINK = (By.XPATH, "//p[text()='Личный Кабинет']")   # кнопка личный кабинет
+    CONSTRUCTOR_LINK = (By.XPATH, "//p[text()='Конструктор']")           # кнопка конструктор
+    LOGO_LINK = (By.CLASS_NAME, "AppHeader_header__logo__2D0X2")         # логотип Stellar Burgers
+    BURGER_HEADER = (By.XPATH, "//h1[contains(text(),'Соберите бургер')]")  # заголовок для проверки
