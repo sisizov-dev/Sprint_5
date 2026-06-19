@@ -12,6 +12,14 @@ class RegistrationLocators:
     TITLE_LOGIN = (By.XPATH, "//h2[contains(text(),'Вход')]") #ожидаемый вывод на экран кнопки "Войти"
     MESSAGE_ERROR = (By.XPATH, "//p[contains(text(),'пароль')]")  #ожидаемый вывод на экран сообщения об ошибке
 
+class LoginViaAccountLocators:
+    # Локаторы для входа через кнопку "Личный кабинет"
+    PERSONAL_ACCOUNT_LINK = (By.XPATH, "//p[text()='Личный Кабинет']")  # ссылка для входа в личный кабинет на главной странице
+    EMAIL_INPUT_LOGIN = (By.XPATH, "(//input[@name='name'])")           # поле email на форме входа
+    INP_PAS = (By.NAME, "Пароль")                                       # поле пароль на форме входа
+    SUBMIT_LOGIN = (By.XPATH, "//button[text()='Войти']")               # кнопка «Войти»
+    TITLE_ORDER = (By.XPATH, "//button[contains(text(),'Оформить заказ')]")  # проверка успешного входа
+
 #main_page.find_element(By.XPATH, "//button[text()='Войти в аккаунт']").click() # клик по кнопке войти в аккаунт на главной странице
 
 #main_page.find_element(By.CLASS_NAME, "Auth_link__1fOlj").click() # клик по кнопке зарегистрироваться на странице входа в аккаунт
