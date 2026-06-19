@@ -1,8 +1,13 @@
-from selenium.webdriver.common.by import By 
-import time
-def test_logout_from_personal_account(authorized_main_page): #проверяем проверяем кнопку выход из личного кабинета
-    authorized_main_page.find_element(By.XPATH, "//p[text()='Личный Кабинет']").click() #нажимаем кнопку личный кабинет
-    authorized_main_page.find_element(By.XPATH, "//button[text()='Выход']").click()  # нажимаем кнопку выход из личного кабинета
-    
-    time.sleep(2)
-    assert authorized_main_page.current_url == "https://stellarburgers.education-services.ru/login"
+import pytest
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from locators import LogoutLocators
+
+class TestLogout:
+    def test_logout_from_personal_account(self, authorized_main_page):  # проверяем выход по кнопке «Выйти»
+        authorized_main_page.find_element(*LogoutLocators.PERSONAL_ACCOUNT_LINK).click()   # нажимаем личный кабинет
+        authorized_main_page.find_element(*LogoutLocators.LOGOUT_BUTTON).click()            # нажимаем выход
+
+        wait = WebDriverWait(authorized_main_page, 5)
+        wait.until(EC.url_to_be("https://stellarburgers.education-services.ru/login"))
+        assert authorized_main_page.current_url == "https://stellarburgers.education-services.ru/login"
