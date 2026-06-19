@@ -2,14 +2,16 @@ from selenium.webdriver.common.by import By
 
 class RegistrationLocators:
     BUTTON_ENTER = (By.XPATH, "//button[text()='Войти в аккаунт']") #кнопка войти в аккаунт на главной странице
-    BUTTON_CHEK = (By.CLASS_NAME, "Auth_link__1fOlj") #кнопка войти в аккаунт на главной странице
+    REGISTER_LINK = (By.CLASS_NAME, "Auth_link__1fOlj") #ссылка на регистрацию
 
     INP_NAME = (By.XPATH, "(//input[@name='name'])[1]")    #поле имя 
     INP_EMAIL = (By.XPATH, "(//input[@name='name'])[2]")   #поле емайл
     INP_PAS =(By.NAME, "Пароль")                         #поле пароль 
 
     BUTTON_CHEKIN = (By.XPATH, "//button[text()='Зарегистрироваться']") #кнопка зарегистрироваться в форме регистрации
-    TITLE_LOGIN = (By.XPATH, "//h2[contains(text(),'Вход')]")
+    TITLE_LOGIN = (By.XPATH, "//h2[contains(text(),'Вход')]") #ожидаемый вывод на экран кнопки "Войти"
+    MESSAGE_ERROR = (By.XPATH, "//p[contains(text(),'пароль')]")  #ожидаемый вывод на экран сообщения об ошибке
+
 #main_page.find_element(By.XPATH, "//button[text()='Войти в аккаунт']").click() # клик по кнопке войти в аккаунт на главной странице
 
 #main_page.find_element(By.CLASS_NAME, "Auth_link__1fOlj").click() # клик по кнопке зарегистрироваться на странице входа в аккаунт
