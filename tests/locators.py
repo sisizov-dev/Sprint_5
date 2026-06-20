@@ -39,7 +39,7 @@ class LoginLocators:
     RECOVER_PASSWORD_LINK = (By.XPATH, "//a[text()='Восстановить пароль']")  # ссылка восстановить пароль
     LOGIN_LINK_RECOVER = (By.XPATH, "//a[text()='Войти']")            # кнопка войти на форме восстановления
 
-class ConstructorLocators:
+class NavigateLocators:
     #Локаторы для перехода в конструктор
     PERSONAL_ACCOUNT_LINK = (By.XPATH, "//p[text()='Личный Кабинет']")   # кнопка личный кабинет
     CONSTRUCTOR_LINK = (By.XPATH, "//p[text()='Конструктор']")           # кнопка конструктор
