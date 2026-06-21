@@ -57,7 +57,7 @@ class ConstructorLocators:
     SAUCES_TAB = (By.XPATH, "//span[text()='Соусы']")              # вкладка «Соусы»
     FILLINGS_TAB = (By.XPATH, "//span[text()='Начинки']")         # вкладка «Начинки»
 
-    ACTIVE_BUNS_TAB = (By.XPATH, "//span[text()='Булки']/parent::div[contains(@class, 'tab_tab_type_current__2BEPc')]") #локатор активного таба
-    ACTIVE_SAUCES_TAB = (By.XPATH, "//span[text()='Соусы']/parent::div[contains(@class, 'tab_tab_type_current__2BEPc')]")  #локатор активного таба
-    ACTIVE_FILLINGS_TAB = (By.XPATH, "//span[text()='Начинки']/parent::div[contains(@class, 'tab_tab_type_current__2BEPc')]")  #локатор активного таба
+    ACTIVE_BUNS_TAB = (By.XPATH, "//span[text()='Булки']/parent::div[contains(@class, 'tab_tab_type_current__2BEPc')]") #локатор активного таба булки
+    ACTIVE_SAUCES_TAB = (By.XPATH, "//span[text()='Соусы']/parent::div[contains(@class, 'tab_tab_type_current__2BEPc')]")  #локатор активного таба соусы
+    ACTIVE_FILLINGS_TAB = (By.XPATH, "//span[text()='Начинки']/parent::div[contains(@class, 'tab_tab_type_current__2BEPc')]")  #локатор активного таба начинки
     
