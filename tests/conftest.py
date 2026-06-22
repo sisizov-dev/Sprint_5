@@ -2,8 +2,9 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import random
-import time
-
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from test_data import EXISTING_USER
 #создаёт экземпляр Chrome-драйвера
 @pytest.fixture  
 def driver():
@@ -28,20 +29,13 @@ def main_page(driver):
     return driver
 
 
-#предоставляет фиксированные данные зарегистрированного пользователя
-@pytest.fixture
-def existing_user():
-    return {
-        "email": "kolya12123@yandex.ru",  
-        "password": "123456"           
-    }
 #выполняет авторизацию
 @pytest.fixture 
-def authorized_main_page(main_page, existing_user):
+def authorized_main_page(main_page):
     main_page.find_element(By.XPATH, "//button[text()='Войти в аккаунт']").click()
-    main_page.find_element(By.XPATH, "(//input[@name='name'])").send_keys(existing_user["email"])
-    main_page.find_element(By.NAME, "Пароль").send_keys(existing_user["password"])
+    main_page.find_element(By.XPATH, "(//input[@name='name'])").send_keys(EXISTING_USER["email"])
+    main_page.find_element(By.NAME, "Пароль").send_keys(EXISTING_USER["password"])
     main_page.find_element(By.XPATH, "//button[text()='Войти']").click()
-    time.sleep(2) 
+    WebDriverWait(main_page, 5).until(EC.visibility_of_element_located((By.XPATH, "//button[contains(text(),'Оформить заказ')]")))
     return main_page
 
