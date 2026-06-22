@@ -37,8 +37,8 @@ class TestLogin:
         main_page.find_element(*LoginLocators.BUTTON_ENTER).click()   # нажимаем кнопку войти в аккаунт
         main_page.find_element(*LoginLocators.RECOVER_PASSWORD_LINK).click()   # нажимаем ссылку восстановить пароль
         main_page.find_element(*LoginLocators.LOGIN_LINK_RECOVER).click()   # нажимаем кнопку войти на форме восстановления
-        main_page.find_element(*LoginLocators.EMAIL_INPUT).send_keys(existing_user["email"])   # поле емайл
-        main_page.find_element(*LoginLocators.PASSWORD_INPUT).send_keys(existing_user["password"])  # поле пароль
+        main_page.find_element(*LoginLocators.EMAIL_INPUT).send_keys(EXISTING_USER["email"])   # поле емайл
+        main_page.find_element(*LoginLocators.PASSWORD_INPUT).send_keys(EXISTING_USER["password"])  # поле пароль
         main_page.find_element(*LoginLocators.SUBMIT_LOGIN).click()   # нажимаем кнопку войти
         wait = WebDriverWait(main_page, 5)
         order_button = wait.until(EC.visibility_of_element_located(LoginLocators.ORDER_BUTTON))
