@@ -2,15 +2,16 @@ import pytest
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import LoginViaAccountLocators
+from test_data import EXISTING_USER
 
 class TestLoginViaAccount:
-    def test_login_via_personal_account(self, main_page, existing_user):
+    def test_login_via_personal_account(self, main_page):
         
         main_page.find_element(*LoginViaAccountLocators.PERSONAL_ACCOUNT_LINK).click() # нажимаем на кнопку "Личный Кабинет" на главной
         
-        main_page.find_element(*LoginViaAccountLocators.EMAIL_INPUT_LOGIN).send_keys(existing_user["email"]) # вводим email
+        main_page.find_element(*LoginViaAccountLocators.EMAIL_INPUT_LOGIN).send_keys(EXISTING_USER["email"]) # вводим email
         
-        main_page.find_element(*LoginViaAccountLocators.INP_PAS).send_keys(existing_user["password"]) # вводим пароль
+        main_page.find_element(*LoginViaAccountLocators.INP_PAS).send_keys(EXISTING_USER["password"]) # вводим пароль
         
         main_page.find_element(*LoginViaAccountLocators.SUBMIT_LOGIN).click() # нажимаем кнопку "Войти"
         
