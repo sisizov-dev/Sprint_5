@@ -4,8 +4,8 @@ class RegistrationLocators:
     BUTTON_ENTER = (By.XPATH, "//button[text()='Войти в аккаунт']") #кнопка войти в аккаунт на главной странице
     REGISTER_LINK = (By.CLASS_NAME, "Auth_link__1fOlj") #ссылка на регистрацию
 
-    INP_NAME = (By.XPATH, "(//input[@name='name'])[1]")    #поле имя 
-    INP_EMAIL = (By.XPATH, "(//input[@name='name'])[2]")   #поле емайл
+    INP_NAME = (By.XPATH, "//label[text()='Имя']/parent::div//input")   #поле имя 
+    INP_EMAIL = (By.XPATH, "//label[text()='Email']/parent::div//input")   #поле емайл
     INP_PAS =(By.NAME, "Пароль")                         #поле пароль 
 
     BUTTON_CHEKIN = (By.XPATH, "//button[text()='Зарегистрироваться']") #кнопка зарегистрироваться в форме регистрации
